@@ -3,7 +3,7 @@
   <div class="row justify-content-center">
       <div class="col-md-8">
           <div class="card card-default">
-              <div class="card-header">Create User</div>
+              <div class="card-header">Edit User</div>
 
               <div class="card-body">
                 <form @submit.prevent="updateUser">
@@ -49,8 +49,8 @@
         },
         methods: {
             updateUser(){
-                let uri = '/api/users';
-                this.axios.post(uri, this.user).then((response) => {
+                let uri = `/api/users/${this.$route.params.id}`;
+                this.axios.put(uri, this.user).then((response) => {
                     this.$router.push({name: 'users'});
                 });
             }

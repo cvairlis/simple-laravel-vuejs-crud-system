@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     const SUCCESSFULLY_ADDED = 'Successfully added';
+
     /**
      * Display a listing of the resource.
      *
