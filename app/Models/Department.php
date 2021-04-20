@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Department extends Model
 {
@@ -28,5 +29,13 @@ class Department extends Model
     public function getDateCreatedAttribute()
     {
         return Carbon::parse($this->created_at)->format('d-m-Y');
+    }
+
+    /**
+     * Many to many relation with users departments
+     */
+    public function users() : BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
     }
 }

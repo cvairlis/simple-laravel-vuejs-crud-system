@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -39,5 +40,13 @@ class User extends Authenticatable
     public function getDateCreatedAttribute()
     {
         return Carbon::parse($this->created_at)->format('d-m-Y');
+    }
+
+    /**
+     * Many to many relation with users departments
+     */
+    public function departments() : BelongsToMany
+    {
+        return $this->belongsToMany(Department::class);
     }
 }
