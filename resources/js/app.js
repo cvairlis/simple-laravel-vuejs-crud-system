@@ -20,6 +20,7 @@ Vue.use(VueAxios, axios);
 import HomeComponent from './components/HomeComponent.vue';
 import UsersComponent from './components/users/UsersComponent.vue';
 import CreateUserComponent from './components/users/CreateUserComponent.vue';
+import EditUserComponent from './components/users/EditUserComponent.vue';
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
       name: 'users.create',
       path: '/users/create',
       component: CreateUserComponent
+  },
+  {
+      name: 'users.user.edit',
+      path: '/users/user/edit/:id',
+      component: EditUserComponent
   },
 ];
 

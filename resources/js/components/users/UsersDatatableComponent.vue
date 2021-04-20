@@ -37,7 +37,7 @@
                         <th>
                             Created At
                         </th>
-                        <!-- <th>Action</th> -->
+                        <th colspan="2" class="text-center">Actions</th>
                     </tr>
 
                     <tr v-for="user in users.data" :key="user.id">
@@ -49,16 +49,8 @@
                         <td>{{ user.email }}</td>
                         <td>{{ user.departments }}</td>
                         <td>{{ user.date_created }}</td>
-                        <!-- <td>
-                            <button class="btn btn-danger btn-sm">
-                                Create
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">
-                                Delete
-                            </button>
-                        </td> -->
+                        <td><router-link :to="{name: 'users.user.edit', params: { id: user.id }}" class="btn btn-primary">Edit</router-link></td>
+                        <td><button class="btn btn-danger" @click = "deleteUser(user.id)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -85,10 +77,18 @@ export default {
         }
     },
     methods: {
-        getUsers(page = 1){
+        getUsers(page = 1)
+        {
             axios.get('/api/getUsers?page='+ page + '&paginate=' + this.paginate)
             .then(response => {
                 this.users = response.data;
+            });
+        },
+        deleteUser(id)
+        {
+            let uri = `/api/users/${id}`;
+            this.axios.delete(uri).then(response => {
+                this.users.splice(this.users.indexOf(id), 1);
             });
         }
     },

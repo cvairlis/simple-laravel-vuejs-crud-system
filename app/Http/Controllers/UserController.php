@@ -40,6 +40,16 @@ class UserController extends Controller
     }
 
     /**
+     * Gets data from the resource
+     */
+    public function edit($id)
+    {
+      $user = User::find($id);
+
+      return response()->json($user);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
