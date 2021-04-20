@@ -32,7 +32,7 @@ class UserController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'password' => Hash::make(request('password')),
-            'departments' => request('departments'),
+            'departments' => implode(',' ,collect(request('departments'))->pluck('code')->toArray()),
         ]);
 
         $user->save();

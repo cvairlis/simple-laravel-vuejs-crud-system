@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'departments',
     ];
 
     protected $appends = ['date_created'];

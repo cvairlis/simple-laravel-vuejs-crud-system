@@ -21,7 +21,7 @@ class Department extends Model
         'description',
     ];
 
-    protected $appends = ['date_created'];
+    protected $appends = ['date_created', 'code'];
 
     /**
      * Get the created at in a more readable user-friendly format
@@ -29,6 +29,14 @@ class Department extends Model
     public function getDateCreatedAttribute()
     {
         return Carbon::parse($this->created_at)->format('d-m-Y');
+    }
+
+    /**
+     * Get the code attribute
+     */
+    public function getCodeAttribute()
+    {
+        return $this->id;
     }
 
     /**

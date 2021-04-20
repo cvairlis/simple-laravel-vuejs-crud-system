@@ -13,9 +13,9 @@ Vue.use(VueRouter);
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
+Vue.use(VueAxios, axios);
 
 import App from './App.vue';
-Vue.use(VueAxios, axios);
 
 import HomeComponent from './components/HomeComponent.vue';
 import UsersComponent from './components/users/UsersComponent.vue';

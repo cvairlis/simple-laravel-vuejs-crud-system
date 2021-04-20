@@ -30,3 +30,5 @@ Route::resources([
 
 Route::get('/getUsers', [GetUsersController::class, 'index']);
 Route::get('/getDepartments', [GetDepartmentsController::class, 'index']);
+
+Route::get('/departments/search/{query}', [GetDepartmentsController::class, 'search']);
