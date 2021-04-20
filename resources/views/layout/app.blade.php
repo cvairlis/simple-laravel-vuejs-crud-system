@@ -21,18 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-
-        <nav class="bg-white px-8 pt-2 shadow-md">
-            <div class="-mb-px flex justify-center">
-                <a class="no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide {{ request()->routeIs('users.index') ?  "font-bold" : "" }} text-xs py-3 mr-4" href="{{ route('users.index') }}">
-                    Users
-                </a>
-                <a class="no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide {{ request()->routeIs('departments.index') ?  "font-bold" : "" }} text-xs py-3 mr-4" href="{{ route('departments.index') }}">
-                    Departments
-                </a>
-            </div>
-       </nav>
-
         <div id="app">
             <main class="py-4">
                 @yield('content')

@@ -17,13 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('welcome'); })->name('welcome');
-
-// registering many resource controllers at once
-Route::resources([
-    'users' => UserController::class,
-    'departments' => DepartmentController::class,
-]);
-
-Route::get('/getUsers', [GetUsersController::class, 'index']);
-Route::get('/getDepartments', [GetDepartmentsController::class, 'index']);
+Route::get('/{any}', function () {
+    return view('layout.app');
+  })->where('any', '.*');

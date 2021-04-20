@@ -51,7 +51,12 @@
                         <td>{{ user.date_created }}</td>
                         <!-- <td>
                             <button class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                Create
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">
+                                Delete
                             </button>
                         </td> -->
                     </tr>
@@ -81,7 +86,7 @@ export default {
     },
     methods: {
         getUsers(page = 1){
-            axios.get('/getUsers?page='+ page + '&paginate=' + this.paginate)
+            axios.get('/api/getUsers?page='+ page + '&paginate=' + this.paginate)
             .then(response => {
                 this.users = response.data;
             });

@@ -8,16 +8,38 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+import VueAxios from 'vue-axios';
+import axios from 'axios';
+
+import App from './App.vue';
+Vue.use(VueAxios, axios);
+
+import HomeComponent from './components/HomeComponent.vue';
+import UsersComponent from './components/users/UsersComponent.vue';
+import CreateUserComponent from './components/users/CreateUserComponent.vue';
+
+const routes = [
+  {
+      name: 'home',
+      path: '/',
+      component: HomeComponent
+  },
+  {
+      name: 'users',
+      path: '/users',
+      component: UsersComponent
+  },
+  {
+      name: 'users.create',
+      path: '/users/create',
+      component: CreateUserComponent
+  },
+];
+
+const router = new VueRouter({ mode: 'history', routes: routes});
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+
 Vue.component('pagination', require('laravel-vue-pagination'));
-Vue.component('users-component', require('./components/UsersComponent.vue').default);
-Vue.component('departments-component', require('./components/DepartmentsComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
-    el: '#app',
-});
