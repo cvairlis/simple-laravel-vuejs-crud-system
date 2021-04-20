@@ -34,7 +34,7 @@
                         <th>
                             Created At
                         </th>
-                        <!-- <th>Action</th> -->
+                        <th colspan="2" class="text-center">Actions</th>
                     </tr>
 
                     <tr v-for="department in departments.data" :key="department.id">
@@ -45,11 +45,8 @@
                         <td>{{ department.name }}</td>
                         <td>{{ department.description }}</td>
                         <td>{{ department.date_created }}</td>
-                        <!-- <td>
-                            <button class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
-                        </td> -->
+                        <td><router-link :to="{name: 'departments.department.edit', params: { id: department.id }}" class="btn btn-primary">Edit</router-link></td>
+                        <td><button class="btn btn-danger" @click = "deleteDepartment(department.id)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -80,6 +77,13 @@ export default {
             axios.get('api/getDepartments?page='+ page + '&paginate=' + this.paginate)
             .then(response => {
                 this.departments = response.data;
+            });
+        },
+        deleteDepartment(id)
+        {
+            let uri = `/api/departments/${id}`;
+            this.axios.delete(uri).then(response => {
+                this.departments.splice(this.departments.indexOf(id), 1);
             });
         }
     },

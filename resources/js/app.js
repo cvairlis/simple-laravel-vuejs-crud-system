@@ -22,6 +22,8 @@ import UsersComponent from './components/users/UsersComponent.vue';
 import CreateUserComponent from './components/users/CreateUserComponent.vue';
 import EditUserComponent from './components/users/EditUserComponent.vue';
 import DepartmentsComponent from './components/departments/DepartmentsComponent.vue';
+import CreateDepartmentComponent from './components/departments/CreateDepartmentComponent.vue';
+import EditDepartmentComponent from './components/departments/EditDepartmentComponent.vue';
 
 const routes = [
   {
@@ -48,6 +50,16 @@ const routes = [
       name: 'departments',
       path: '/departments',
       component: DepartmentsComponent
+  },
+  {
+      name: 'departments.create',
+      path: '/departments/create',
+      component: CreateDepartmentComponent
+  },
+  {
+      name: 'departments.department.edit',
+      path: '/departments/department/edit/:id',
+      component: EditDepartmentComponent
   },
 ];
 
