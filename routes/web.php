@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\GetDepartmentsController;
+use App\Http\Controllers\GetUsersController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/{any}', function () {
+    return view('layout.app');
+  })->where('any', '.*');

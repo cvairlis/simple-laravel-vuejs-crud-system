@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
-class UserFactory extends Factory
+class DepartmentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Department::class;
 
     /**
      * Define the model's default state.
@@ -24,9 +24,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'password' => Hash::make('password'),
-            'departments' => '', // TODO: add here when departments will be available
+            'description' => $this->faker->text,
         ];
     }
 }

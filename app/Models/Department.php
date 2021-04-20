@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Department extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -19,21 +18,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
-        'departments',
+        'description',
     ];
 
-    protected $appends = ['date_created'];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-    ];
+    protected $appends = ['date_created', 'code'];
 
     /**
      * Get the created at in a more readable user-friendly format
@@ -44,10 +32,18 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the code attribute
+     */
+    public function getCodeAttribute()
+    {
+        return $this->id;
+    }
+
+    /**
      * Many to many relation with users departments
      */
-    public function departments() : BelongsToMany
+    public function users() : BelongsToMany
     {
-        return $this->belongsToMany(Department::class);
+        return $this->belongsToMany(User::class);
     }
 }
