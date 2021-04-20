@@ -24,8 +24,6 @@ class User extends Authenticatable
 
     protected $appends = ['date_created'];
 
-
-
     /**
      * The attributes that should be hidden for arrays.
      *

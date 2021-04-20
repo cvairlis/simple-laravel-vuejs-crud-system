@@ -27,6 +27,9 @@
                 <a class="no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide {{ request()->routeIs('users.index') ?  "font-bold" : "" }} text-xs py-3 mr-4" href="{{ route('users.index') }}">
                     Users
                 </a>
+                <a class="no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide {{ request()->routeIs('departments.index') ?  "font-bold" : "" }} text-xs py-3 mr-4" href="{{ route('departments.index') }}">
+                    Departments
+                </a>
             </div>
        </nav>
 

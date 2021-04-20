@@ -10,6 +10,7 @@ window.Vue = require('vue').default;
 
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.component('users-component', require('./components/UsersComponent.vue').default);
+Vue.component('departments-component', require('./components/DepartmentsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
