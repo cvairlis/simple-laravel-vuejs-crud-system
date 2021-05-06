@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/cvairlis/simple-laravel-vuejs-crud-system" target="_blank"><img src="https://lh6.googleusercontent.com/6xXyOQ7cEW8UqC9XpNC-jF2yELWLFGvIRruGMGCj_QdaEAjIW1ip6c_zID-kzu9KPPgSOQBXjD9ShfVUHqMV=w1920-h981-rw" width="400"></a></p>
+<p align="center"><a href="https://github.com/cvairlis/simple-laravel-vuejs-crud-system" target="_blank"><img src="https://raw.githubusercontent.com/cvairlis/simple-laravel-vuejs-crud-system/develop/resources/assets/sample-of-the-app.png" width="400"></a></p>
 
 ## About The Application
 
