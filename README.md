@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://lh6.googleusercontent.com/6xXyOQ7cEW8UqC9XpNC-jF2yELWLFGvIRruGMGCj_QdaEAjIW1ip6c_zID-kzu9KPPgSOQBXjD9ShfVUHqMV=w1920-h981-rw" width="400"></a></p>
+<p align="center"><a href="https://github.com/cvairlis/simple-laravel-vuejs-crud-system" target="_blank"><img src="https://lh6.googleusercontent.com/6xXyOQ7cEW8UqC9XpNC-jF2yELWLFGvIRruGMGCj_QdaEAjIW1ip6c_zID-kzu9KPPgSOQBXjD9ShfVUHqMV=w1920-h981-rw" width="400"></a></p>
 
 ## About The Application
 
@@ -89,11 +89,11 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 6. Run `php artisan key:generate`
 7. Create a database:
 
-   Name: simple-laravel-vuejs-crud-system
+   Name: `simple-laravel-vuejs-crud-system`
 
-   Charset: utf8mb4
+   Charset: `utf8mb4`
 
-   Collation: utf8mb4_unicode_ci
+   Collation: `utf8mb4_unicode_ci`
 8. Run `php artisan migrate`
 9. Free the storage folder permissions with all permissions on linux (be carefull with this): `sudo chmod -R 777 storage/`
 10. You can run the following command to seed the database with Users and Departments. This will not create the relations only records in the tables.
